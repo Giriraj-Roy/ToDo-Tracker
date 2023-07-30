@@ -1,26 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from 'react'
+import './App.css'
+import InputField from './components/InputField'
+import { Todo } from './model';
 
-function App() {
+const App : React.FC = () => {
+
+  const [task, setTask] = useState<string>("");
+  const [task_List, setTask_List] = useState<Todo[]>([]);
+
+  const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+
+        
+  }
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className='App'>
+      <header className="header-container">
+        TODFY
       </header>
+      <InputField task={task} setTask={setTask} handleSubmit={(e) => handleSubmit(e)}/>
     </div>
-  );
+  )
 }
 
-export default App;
+export default  App
