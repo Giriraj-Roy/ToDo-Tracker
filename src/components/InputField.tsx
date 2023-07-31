@@ -11,9 +11,12 @@ const InputField : React.FC <Props> = ({task, setTask, handleSubmit}) => {
 
     
   return (
-    <form className='input-field'>
+    <form
+          className='input-field'
+          onSubmit={(e) =>handleSubmit(e)}
+    >
         <input type='text' value={task} onChange={(e)=> setTask(e.target.value)} placeholder='Task Name' className='input_task'/>
-        <button className='btn_task'  onSubmit={(e) =>handleSubmit(e)} type='submit' >Add Task</button>
+        <button className='btn_task'   type='submit' >Add Task</button>
     </form>
   )
 }
