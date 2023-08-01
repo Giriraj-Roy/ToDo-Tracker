@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import './App.css'
 import InputField from './components/InputField'
 import { Task } from './model';
+import TodoList from './components/TodoList';
 
 const App : React.FC = () => {
 
@@ -31,6 +32,7 @@ const App : React.FC = () => {
         TODFY
       </header>
       <InputField task={task} setTask={setTask} handleSubmit={(e) => handleSubmit(e)}/>
+      < TodoList task_List={task_List} setTask_List={setTask_List} />
     </div>
   )
 }
