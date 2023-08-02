@@ -1,6 +1,7 @@
 import React from 'react'
 import '../App.css'
 import { Task } from '../model';
+import TodoTask from './TodoTask';
 
 interface Props {
     task_List : Task[];
@@ -14,11 +15,7 @@ const TodoList : React.FC <Props>= ({task_List, setTask_List}) => {
         {
             task_List.map((task) =>{
             return (
-            <div key={task.id} className="todo">
-                        <li>
-                            {task.task}
-                        </li>
-            </div>
+              <TodoTask key={task.id} task={task.task}/>
             )
             })
         }
