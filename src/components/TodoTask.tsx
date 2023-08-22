@@ -5,14 +5,14 @@ import { AiFillEdit, AiFillDelete } from 'react-icons/ai'
 import { MdDone } from 'react-icons/md'
 
 interface Props {
-    key: number;
+    // task.id: number;
     task : Task;
     task_List : Task[];
     setTask_List : React.Dispatch<React.SetStateAction<Task[]>>;
 
 }
 
-const TodoTask : React.FC <Props> = ({key, task, task_List, setTask_List}) => {
+const TodoTask : React.FC <Props> = ({task, task_List, setTask_List}) => {
 
   const [edit, setEdit] = useState<boolean>(false);
   const [editTask, setEditTask] = useState<string>(task.task);
@@ -24,7 +24,7 @@ const TodoTask : React.FC <Props> = ({key, task, task_List, setTask_List}) => {
 
   const handleDone = (id: number)=>{
     setTask_List(task_List.map(
-      (task)=> key === id ? { ...task, isDone: !task.isDone } : task))
+      (task)=> task.id === id ? { ...task, isDone: !task.isDone } : task))
   }
   const handleDelete = (id: number) => {
     setTask_List(task_List.filter(
@@ -37,13 +37,14 @@ const TodoTask : React.FC <Props> = ({key, task, task_List, setTask_List}) => {
       task_List.map((task) => (task.id === id ? { ...task, task: editTask } : task))
     );
     setEdit(false);
+    console.log(editTask)
 
 
   }
 
   return (
     <form className='todo'
-          onSubmit={(e)=>handleEdit(e, key)}
+          onSubmit={(e)=>handleEdit(e, task.id)}
     >
 
 
@@ -69,10 +70,10 @@ const TodoTask : React.FC <Props> = ({key, task, task_List, setTask_List}) => {
           <span className='icon' onClick={()=> { if (!edit && !task.isDone)  setEdit(!edit)}}>
             <AiFillEdit />
           </span>
-          <span className='icon' onClick={()=>handleDelete(key)}>
+          <span className='icon' onClick={()=>handleDelete(task.id)}>
             <AiFillDelete/>
           </span>
-          <span className='icon' onClick={()=>handleDone(key)}>
+          <span className='icon' onClick={()=>handleDone(task.id)}>
             <MdDone/>
           </span>
 
