@@ -15,7 +15,10 @@ const TodoList : React.FC <Props>= ({task_List, setTask_List}) => {
         {
             task_List.map((task) =>{
             return (
-              <TodoTask key={task.id} task={task.task}/>
+              <TodoTask key={task.id} task={task.task}
+                        task_List = {task_List}
+                        setTask_List = {setTask_List}
+              />
             )
             })
         }
