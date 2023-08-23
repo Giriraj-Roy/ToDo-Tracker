@@ -4,6 +4,7 @@
     width : 100vw;
     height : 100vh;
     background: rgb(209, 208, 208);
+    background: repeating-linear-gradient( to bottom right , red , yellow );
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -47,6 +48,17 @@
     font-size: 1rem;
     cursor: pointer;
 }
+.todo_list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50vw;
+    height: 50vh;
+    overflow: auto;
+}
+.todo_list::-webkit-scrollbar{
+    display: none;
+}
 .todo_list > * {
     display: block;
     /* background-color: ; */
@@ -56,7 +68,33 @@
     height: fit-content;
 
 }
+.todo{
+    margin: 2vh 0;
+    display: flex;
+    justify-content: space-between;
+    width: 45vw;
+}
+.task_edit{
+    width: 50%;
+    height: 2vw;
+    padding: 1.65vh 1vw;
+    background: transparent;
+    outline: none;
+    font-size: 2vw;
+    border: none;
+}
+.task_name{
+    margin: 1vh 2vw;
+    font-size: 2vw;
+}
+.task_actions{
+    margin: auto 0;
 
+}
+.icon{
+    margin: 0.8vw;
+    width: 3vw;
+}
 @media (max-width : 1080px) {
     .btn_task{
         padding: 2%;

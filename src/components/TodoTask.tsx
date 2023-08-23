@@ -51,6 +51,7 @@ const TodoTask : React.FC <Props> = ({task, task_List, setTask_List}) => {
       {
         edit ? 
               <input 
+                      className='task_edit'
                       ref = {inputRef}
                       value={editTask}
                       onChange={(e)=> setEditTask(e.target.value)}
@@ -58,23 +59,23 @@ const TodoTask : React.FC <Props> = ({task, task_List, setTask_List}) => {
               :
               
                 task.isDone ? 
-                  <s>{task.task}</s>
+                  <s className='task_name'>{task.task}</s>
                   : 
-                  <span>{task.task}</span>
+                  <span className='task_name'>{task.task}</span>
               
 
       }
 
         
-        <div>
+        <div className='task_actions'>
           <span className='icon' onClick={()=> { if (!edit && !task.isDone)  setEdit(!edit)}}>
-            <AiFillEdit />
+            <AiFillEdit size={28} />
           </span>
           <span className='icon' onClick={()=>handleDelete(task.id)}>
-            <AiFillDelete/>
+            <AiFillDelete size={28}/>
           </span>
           <span className='icon' onClick={()=>handleDone(task.id)}>
-            <MdDone/>
+            <MdDone size={28}/>
           </span>
 
         </div>
