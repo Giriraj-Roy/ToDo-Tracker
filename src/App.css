@@ -31,20 +31,12 @@
     height: 5%;
 }
 .input_task{
-    margin: 0 5%;
-    padding: 1% 5%;
     width: 80%;
-    border-radius: 5vw;
-    height: 80%;
     outline: none;
 
-    font-size: 120%;
+    font-size: 1rem;
 }
 .btn_task{
-    margin: auto;
-    border-radius: 50%;
-    padding: 2% 4%;
-    min-width: 20%;
     font-size: 1rem;
     cursor: pointer;
 }
