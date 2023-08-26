@@ -22,14 +22,14 @@ const App : React.FC = () => {
         
   }
 
-  console.log(task_List);
+  // console.log(task_List);
   
 
 
   return (
     <div className='App'>
       <header className="header-container">
-        TODFY
+        TODIFY
       </header>
       <InputField task={task} setTask={setTask} handleSubmit={(e) => handleSubmit(e)}/>
       < TodoList task_List={task_List} setTask_List={setTask_List} />

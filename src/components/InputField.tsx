@@ -29,7 +29,7 @@ const input_ref = useRef<HTMLInputElement>(null)
                 className='btn_task'
                 type='submit'
         >
-                  Add Task
+                Add Task
         </button>
     </form>
   )
