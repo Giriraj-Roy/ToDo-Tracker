@@ -28,11 +28,25 @@ const App : React.FC = () => {
 
   return (
     <div className='App'>
-      <header className="header-container">
-        TODIFY
-      </header>
-      <InputField task={task} setTask={setTask} handleSubmit={(e) => handleSubmit(e)}/>
-      < TodoList task_List={task_List} setTask_List={setTask_List} />
+      <div className='left'>
+        <div className='left-head'>Akagami No Shanks</div>
+
+        <div className='left-subhead'>Inspiring Productivity, One Click at a Time</div>
+        <div>
+          Urgent tasks
+        </div>
+        <div className='left-logout'>
+          Log Out
+        </div>
+      </div>
+      <div className='blob'></div>
+      <div className='right'>
+        <header className="header-container">
+          Today's Focus
+        </header>
+        <InputField task={task} setTask={setTask} handleSubmit={(e) => handleSubmit(e)}/>
+        < TodoList task_List={task_List} setTask_List={setTask_List} />
+      </div>
     </div>
   )
 }
