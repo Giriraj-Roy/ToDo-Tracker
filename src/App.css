@@ -107,7 +107,6 @@
     border-radius: 50%;
     background: #FF5F57;
     cursor: pointer;
-
 }
 .priorityMedium{
     width: 1rem;
@@ -155,7 +154,7 @@
     /* box-shadow: 5px 5px 5px rgba(0,0,0,0.3); */
 }
 .todo_list{
-    margin-left: 5%;
+    margin-left: 2%;
     display: flex;
     flex-direction: column;
     align-items: center;
